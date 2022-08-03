@@ -11,7 +11,7 @@ h1 img{
 
 .first-page .container{
     display: flex;
-    flex-flow: column;
+    flex-direction: column;
     width: auto;
     height: 82vh;
     justify-content: center;
