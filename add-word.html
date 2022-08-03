@@ -11,21 +11,30 @@
 
 <body>
   <header>
-    <div class "caixa-header">
+    <div class = "caixa-header">
       <h1 ><img src= "img/alura-logo.svg" alt= "Logo alura"></h1>
     </div>
   </header>
   
   <main>
-    <section class="content"">
+    <section class="content">
       <div class = "text-area">
-        <input class = "text-area" type="text" placeholder="Digite uma palavra ou frase"></input>
+        <textarea class = "text-input" placeholder="Digite seu texto..." ></textarea>
       </div>
+      <!-- <div class = "info">
+        <img src= "img/Attention.svg" alt="attention sign">
+        <p>Máximo de 8 letras</p>
+      </div> -->
       <nav class="container">
+        <div class = "info">
+          <img src= "img/Attention.svg" alt="attention sign">
+          <p>Máximo de 8 letras</p>
+        </div>
         <button class = "save-word">Salvar e começar</button>
         <button class = "cancel">Cancelar</button>
       </nav>
+     
     </section>
   </main>
-  <script src="js/main.js"></script>
+  <script src="js/add-word.js"></script>
 </body>
