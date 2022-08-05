@@ -1,210 +1,210 @@
 body{
-    background-color: #F2F5F7;
+  background-color: #F2F5F7;
 }
 header{
-    padding: 20px;
+  padding: 20px;
 }
 h1 img{
-    margin-top: 20px;
-    margin-left: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .content-game{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    height: 60vh;
-    width: 100%;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 60vh;
+  width: 100%;
+  text-align: center;
 } 
 
 .content-game .graph{
-    height: 40vh;
+  height: 40vh;
 } 
 
 canvas{
-    max-width: 1200px;
-    max-height: 800px;
+  max-width: 1200px;
+  max-height: 800px;
 }
 
 .keyboard{
-    width: 40%;
-    height: auto;
-    display: flex;
-    justify-content: space-between;
+  width: 40%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
 } 
 
 .startGame{
-    color: transparent;
+  color: transparent;
 }
 
 .word{
-    font-family: 'Inter';
-    font-weight: 400;
-    font-size: 30px;
-    line-height: 150%;
-    color: #0A3871;
+  font-family: 'Inter';
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 150%;
+  color: #0A3871;
 }
 
 .line{
-    border-bottom: 2px solid #0A3871;
-    padding: 15px;
-    width: 20px;
+  border-bottom: 2px solid #0A3871;
+  padding: 15px;
+  width: 20px;
 } 
 
 .wrong-letters-space{
-    width: 80%;
-    display: flex;
-    height: 5vw;
-    justify-content: center;
-    align-items: center;
+  width: 80%;
+  display: flex;
+  height: 5vw;
+  justify-content: center;
+  align-items: center;
 }
 
 .wrong-letters{
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 150%;
-    text-align: center;
-    color: #495057;
-    padding: 15px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 150%;
+  text-align: center;
+  color: #495057;
+  padding: 15px;
 }
 
 .buttons{
-    text-align: center;
-    height: auto;
-    width: auto;
+  text-align: center;
+  height: auto;
+  width: auto;
 }
 
 .container{
-    display: inline-block;
+  display: inline-block;
 }
 .win-game{
-    height: 50%;
-    font-family: 'Inter';
-    font-style: bold;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 150%;
-    color: #0A3871;
-    padding: 15px;
+  height: 50%;
+  font-family: 'Inter';
+  font-style: bold;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 150%;
+  color: #0A3871;
+  padding: 15px;
 }
 
 .lost-game{
-    height: 50%;
-    font-family: 'Inter';
-    font-style: bold;
-    font-weight: 400;
-    font-size: 50px;
-    line-height: 150%;
-    color: red;
-    padding: 15px;
+  height: 50%;
+  font-family: 'Inter';
+  font-style: bold;
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 150%;
+  color: red;
+  padding: 15px;
 }
 
 .new-game{
-    margin-right: 5px;
-    padding: 24px;
-    width: 269px;
-    height: 57px;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 24px;
-    cursor: pointer;
-    color: #FFFFFF;
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 16px;
-    text-align: center;
-    line-height: 19px;
-    height: auto;
-    background-color: #0A3871; 
+  margin-right: 5px;
+  padding: 24px;
+  width: 269px;
+  height: 57px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  line-height: 19px;
+  height: auto;
+  background-color: #0A3871; 
 }
 
 .quit{
-    margin-left: 5px;
-    padding: 24px;
-    width: 269px;
-    height: 57px;
-    box-sizing: border-box;
-    border: 1px solid #0A3871;
-    border-radius: 24px;
-    cursor: pointer;
-    color: #0A3871;;
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 16px;
-    text-align: center;
-    line-height: 19px;
-    height: auto;
-    background-color: #FFFFFF; 
+  margin-left: 5px;
+  padding: 24px;
+  width: 269px;
+  height: 57px;
+  box-sizing: border-box;
+  border: 1px solid #0A3871;
+  border-radius: 24px;
+  cursor: pointer;
+  color: #0A3871;;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  line-height: 19px;
+  height: auto;
+  background-color: #FFFFFF; 
 } 
 
 
 
 /* body{
-    background-color: #F2F5F7;
+  background-color: #F2F5F7;
 }
 header{
-    padding: 20px;
+  padding: 20px;
 }
 h1 img{
-    margin-top: 20px;
-    margin-left: 20px;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
 .content-game{
-    width: 100%; 
-    height: 60vh;
-    display: flex;
-    justify-content:center;
-    margin:auto;
+  width: 100%; 
+  height: 60vh;
+  display: flex;
+  justify-content:center;
+  margin:auto;
 } 
 
 .buttons{
-    width:fit-content;
-    height: auto;
-    margin:auto;
+  width:fit-content;
+  height: auto;
+  margin:auto;
 } 
 
 .buttons .container{
-    display: inline-block;
- }
+  display: inline-block;
+}
 
 .new-game{
-    margin-right: 5px;
-    padding: 24px;
-    width: 269px;
-    height: 57px;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 24px;
-    cursor: pointer;
-    color: #FFFFFF;
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 16px;
-    text-align: center;
-    line-height: 19px;
-    height: auto;
-    background-color: #0A3871; 
+  margin-right: 5px;
+  padding: 24px;
+  width: 269px;
+  height: 57px;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  color: #FFFFFF;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  line-height: 19px;
+  height: auto;
+  background-color: #0A3871; 
 }
 
 .quit{
-    margin-left: 5px;
-    padding: 24px;
-    width: 269px;
-    height: 57px;
-    box-sizing: border-box;
-    border: 1px solid #0A3871;
-    border-radius: 24px;
-    cursor: pointer;
-    color: #0A3871;;
-    font-family: Inter;
-    font-weight: 400;
-    font-size: 16px;
-    text-align: center;
-    line-height: 19px;
-    height: auto;
-    background-color: #FFFFFF; 
+  margin-left: 5px;
+  padding: 24px;
+  width: 269px;
+  height: 57px;
+  box-sizing: border-box;
+  border: 1px solid #0A3871;
+  border-radius: 24px;
+  cursor: pointer;
+  color: #0A3871;;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 16px;
+  text-align: center;
+  line-height: 19px;
+  height: auto;
+  background-color: #FFFFFF; 
 }  */

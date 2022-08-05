@@ -4,16 +4,12 @@ var canvas = document.querySelector('canvas');
 var pincel = canvas.getContext('2d');
 pincel.fillStyle = '#0A3871';
 
- var words = ['CACHORRO', 'PASSAROS', 'COZINHAR', 'CARTEIRA', 'LAMPADA', 'CARTAZ', 'MOTO', 'RATOEIRA', 'MATRIZ', 'PALPEBRA']
+var words = ['CACHORRO', 'PASSAROS', 'COZINHAR', 'CARTEIRA', 'LAMPADA', 'CARTAZ', 'MOTO', 'RATOEIRA', 'MATRIZ', 'PALPEBRA']
 
 var newWord = localStorage.getItem('newWord')
 if(newWord != null){
   words.push(newWord) //adding new word provided from add-word page to the vector
-  console.log(words)
-  console.log(newWord)
 }
-console.log(words)
-console.log(newWord)
 
 buttonNewGame.addEventListener('click', function(){
   window.location.replace('game.html')
@@ -61,20 +57,24 @@ var drawNumber = 1
 function gameEngine(key){
   var wordChars = document.querySelectorAll('.startGame')
   var foundChar = false
-  console.log(wordChars)
+
   for(var i = 0; i < wordChars.length; i++) {
-    var char = wordChars[i].textContent
-    if(key == char){
+    var chars = wordChars[i].textContent
+    if(key == chars){
       wordChars[i].classList.remove('startGame')
       wordChars[i].classList.add('word') 
       foundChar = true
     }
   }
+  
   wordChars = document.querySelectorAll('.startGame') //Updating what letters are available to be found 
-  if(wordChars.length == 0){
+  if(wordChars.length == 0){ //If equal zero, than all words have been shown up, therefore, you've won
     winning()
   }else{
     if(!foundChar && !verifyWrongChar(key)){ 
+      console.log(!verifyWrongChar(key))
+      if(!verifyrightChar(key)){
+        printWrongChar(key)
       switch(drawNumber){
         case 1:
         draw1();
@@ -109,6 +109,8 @@ function gameEngine(key){
         break
       }
       drawNumber += 1 
+    }
+      
     } 
   }
 }
@@ -116,20 +118,35 @@ function gameEngine(key){
 function verifyWrongChar(keyDown){
   var lettersInSpace = document.querySelectorAll(".wrong-letters")
   var thereIsWrongChar = false
-  if(lettersInSpace.length == 0){
-    printWrongChar(keyDown)
+
+  if(lettersInSpace == 0){
+    thereIsWrongChar = false
   }else{
-    for (var i = 0; i < lettersInSpace.length; i++) {
+    for (var i = 0; i < lettersInSpace.length; i++){
       if(lettersInSpace[i].textContent == keyDown){
         thereIsWrongChar = true
-        break;
+        break
       }
     }
-    if(!thereIsWrongChar){
-      printWrongChar(keyDown)
-    }
   }
-  return thereIsWrongChar
+  return thereIsWrongChar 
+}
+
+function verifyrightChar(keyDown){
+  var rightWords = document.querySelectorAll('.word')
+  var foundedChar = false
+
+  if(rightWords.length == 0){
+    foundedChar = false
+  }else{
+    for (var i = 0; i < rightWords.length; i++) {
+      if (rightWords[i].textContent == keyDown) {
+        foundedChar = true
+        break
+      }
+    } 
+  }
+  return foundedChar
 }
 
 
@@ -159,14 +176,12 @@ function losing(){
   content.append(loser)
   window.removeEventListener("keydown", verifyKey)
   removeStorage(newWord)
-  console.log(words)
 }
 
 function removeStorage(newWord){
   localStorage.removeItem('newWord')
   var index = words.indexOf(newWord)
   words.splice(index, 1)
-  console.log(words)
 }
 
 /* Drawing on screen */
