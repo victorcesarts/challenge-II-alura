@@ -80,6 +80,16 @@ canvas{
 .container{
     display: inline-block;
 }
+.win-game{
+    height: 50%;
+    font-family: 'Inter';
+    font-style: bold;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 150%;
+    color: #0A3871;
+    padding: 15px;
+}
 
 .lost-game{
     height: 50%;
