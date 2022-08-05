@@ -2,33 +2,33 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width,  initial-scale=1">
   <title>Jogo da Forca</title>
+  <link rel="icon" href="img/alura-logo.ico">
   <link rel="stylesheet" href="css/reset.css">
- 
+  <link rel='stylesheet' href='css/game.css'>
 </head>
 
 <body>
   <header>
-    <div class "caixa-header">
+    <div class = "caixa-header">
       <h1 ><img src= "img/alura-logo.svg" alt= "Logo alura"></h1>
     </div>
   </header>
   
   <main>
-    <section class="first-page">
+    <section class = "content-game">
+      <canvas class = "graph" ></canvas>
+      <div class = "keyboard""></div> 
+      <div class = "wrong-letters-space"></div>
+    </section>
+
+    <section class="buttons">
       <nav class="container">
-       
-          <button class = "start-game">CUZAO
-          <a href = "game.html"> </a>
-          </button>
-       
-        <a href = "add-word.html">
-          <button class = "add-word">Adicionar palavra</button>
-        </a>
+        <button class = "new-game">Novo jogo</button>
+        <button class = "quit">Desistir</button>
       </nav>
     </section>
-    
   </main>
-  <script src="js/main.js"></script>
+  <script src="js/game.js"></script>
 </body>
