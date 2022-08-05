@@ -4,7 +4,9 @@ var canvas = document.querySelector('canvas');
 var pincel = canvas.getContext('2d');
 pincel.fillStyle = '#0A3871';
 
-var words = ['CACHORRO', 'PASSAROS', 'COZINHAR', 'CARTEIRA', 'LAMPADA', 'CARTAZ', 'MOTO', 'RATOEIRA', 'MATRIZ', 'PALPEBRA']
+/* var words = ['CACHORRO', 'PASSAROS', 'COZINHAR', 'CARTEIRA', 'LAMPADA', 'CARTAZ', 'MOTO', 'RATOEIRA', 'MATRIZ', 'PALPEBRA']
+ */
+var words = ['MOTO', 'CACHORRO']
 
 buttonNewGame.addEventListener('click', function(){
   window.location.replace('game.html')
@@ -38,21 +40,29 @@ function drawSizeWord(word){
   }
 } 
 
+window.addEventListener("keydown", verifyKey)
+
+function verifyKey(e){
+  if(e.code[0] == 'K'){ 
+    var keyUpper = e.key.toUpperCase()
+    gameEngine(keyUpper)
+  } 
+}
+
 var drawNumber = 1
 function gameEngine(key){
   var wordChars = document.querySelectorAll('.startGame')
   var foundChar = false
-  
+  console.log(wordChars)
   for(var i = 0; i < wordChars.length; i++) {
     var char = wordChars[i].textContent
     if(key == char){
       wordChars[i].classList.remove('startGame')
       wordChars[i].classList.add('word') 
-      console.log(key)
-      wordChars = document.querySelectorAll('.startGame') //Updating what letters are available to be found
       foundChar = true
     }
   }
+  wordChars = document.querySelectorAll('.startGame') //Updating what letters are available to be found 
   if(wordChars.length == 0){
     winning()
   }else{
@@ -93,15 +103,6 @@ function gameEngine(key){
       drawNumber += 1 
     } 
   }
-}
-
-window.addEventListener("keydown", verifyKey)
-
-function verifyKey(e){
-  if(e.code[0] == 'K'){ 
-    var keyUpper = e.key.toUpperCase()
-    gameEngine(keyUpper)
-  } 
 }
 
 function verifyWrongChar(keyDown){
