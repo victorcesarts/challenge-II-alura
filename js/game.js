@@ -4,10 +4,8 @@ var canvas = document.querySelector('canvas');
 var pincel = canvas.getContext('2d');
 pincel.fillStyle = '#0A3871';
 
-/* var words = ['CACHORRO', 'PASSAROS', 'COZINHAR', 'CARTEIRA', 'LAMPADA', 'CARTAZ', 'MOTO', 'RATOEIRA', 'MATRIZ', 'PALPEBRA']
- */
-var words = ['MOTO', 'CACHORRO']
-
+var words = ['CACHORRO', 'PASSAROS', 'COZINHAR', 'CARTEIRA', 'LAMPADA', 'CARTAZ', 'MOTO', 'RATOEIRA', 'MATRIZ', 'PALPEBRA']
+ 
 buttonNewGame.addEventListener('click', function(){
   window.location.replace('game.html')
 })
