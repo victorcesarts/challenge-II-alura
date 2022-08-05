@@ -25,9 +25,10 @@ h1 img{
     justify-content:flex-start;
     margin-bottom: 8px;
     width: auto; 
+    
 } 
 
-.content p{
+#info-word{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -36,7 +37,35 @@ h1 img{
     color: #495057;
     opacity: 0.8;
     margin-left: 5px;
+}  
+
+#attention{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 150%;
+    color: red;
+    opacity: 0.8;
+    margin-left: 5px;
+    animation: .8s shake normal;
+    animation:
 }
+
+@keyframes shake {
+    0% { transform: skewX(-30deg); }
+    5% { transform: skewX(30deg); }
+    10% { transform: skewX(-30deg); }
+    15% { transform: skewX(30deg); }
+    20% { transform: skewX(0deg); }
+    100% { transform: skewX(0deg); }  
+    0% {
+        font-size: 18px;
+      }
+      100% {
+        font-size: 19px;
+      }
+  }
 
 textarea{
     width: 80%;

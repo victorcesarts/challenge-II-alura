@@ -4,25 +4,35 @@ var canvas = document.querySelector('canvas');
 var pincel = canvas.getContext('2d');
 pincel.fillStyle = '#0A3871';
 
-var words = ['CACHORRO', 'PASSAROS', 'COZINHAR', 'CARTEIRA', 'LAMPADA', 'CARTAZ', 'MOTO', 'RATOEIRA', 'MATRIZ', 'PALPEBRA']
- 
+ var words = ['CACHORRO', 'PASSAROS', 'COZINHAR', 'CARTEIRA', 'LAMPADA', 'CARTAZ', 'MOTO', 'RATOEIRA', 'MATRIZ', 'PALPEBRA']
+
+var newWord = localStorage.getItem('newWord')
+if(newWord != null){
+  words.push(newWord) //adding new word provided from add-word page to the vector
+  console.log(words)
+  console.log(newWord)
+}
+console.log(words)
+console.log(newWord)
+
 buttonNewGame.addEventListener('click', function(){
   window.location.replace('game.html')
 })
 
 buttonQuit.addEventListener('click', function(){
+  removeStorage(newWord)
   window.location.replace('first-page.html')
 })
+
+var numberWords = words.length
+var selectedWord = chooseWord(numberWords)
+drawSizeWord(selectedWord)
 
 function chooseWord(numberWords) {
   var index = Math.floor(Math.random() * numberWords);
   var word = words[index];
   return word
 }
-
-var numberWords = words.length
-var selectedWord = chooseWord(numberWords)
-drawSizeWord(selectedWord)
 
 function drawSizeWord(word){
   var lengthWord = word.length
@@ -122,6 +132,7 @@ function verifyWrongChar(keyDown){
   return thereIsWrongChar
 }
 
+
 function printWrongChar(letter){
   var wrongLetterSpace = document.querySelector('.wrong-letters-space')
   var wrongLetter = document.createElement('div')
@@ -137,6 +148,7 @@ function winning(){
   winner.classList.add("win-game")
   content.append(winner)
   window.removeEventListener("keydown", verifyKey)
+  removeStorage(newWord)
 }
 
 function losing(){
@@ -146,8 +158,18 @@ function losing(){
   loser.classList.add("lost-game")
   content.append(loser)
   window.removeEventListener("keydown", verifyKey)
+  removeStorage(newWord)
+  console.log(words)
 }
 
+function removeStorage(newWord){
+  localStorage.removeItem('newWord')
+  var index = words.indexOf(newWord)
+  words.splice(index, 1)
+  console.log(words)
+}
+
+/* Drawing on screen */
 function draw1(){
   pincel.fillRect(80,110, 140, 2);
 }
