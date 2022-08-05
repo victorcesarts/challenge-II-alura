@@ -4,6 +4,8 @@ var canvas = document.querySelector('canvas');
 var pincel = canvas.getContext('2d');
 pincel.fillStyle = '#0A3871';
 
+var words = ['CACHORRO', 'PASSAROS', 'COZINHAR', 'CARTEIRA', 'LAMPADA', 'CARTAZ', 'MOTO', 'RATOEIRA', 'MATRIZ', 'PALPEBRA']
+
 buttonNewGame.addEventListener('click', function(){
   window.location.replace('game.html')
 })
@@ -11,8 +13,6 @@ buttonNewGame.addEventListener('click', function(){
 buttonQuit.addEventListener('click', function(){
   window.location.replace('first-page.html')
 })
-
-var words = ['CACHORRO', 'PASSAROS', 'COZINHAR', 'CARTEIRA', 'LAMPADA', 'CARTAZ', 'MOTO', 'RATOEIRA', 'MATRIZ', 'PALPEBRA', 'EU VICTOR']
 
 function chooseWord(numberWords) {
   var index = Math.floor(Math.random() * numberWords);
@@ -48,6 +48,7 @@ function gameEngine(key){
     if(key == char){
       wordChars[i].classList.remove('startGame')
       wordChars[i].classList.add('word') 
+      console.log(key)
       wordChars = document.querySelectorAll('.startGame') //Updating what letters are available to be found
       foundChar = true
     }
