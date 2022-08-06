@@ -74,7 +74,6 @@ function gameEngine(key){
     if(!foundChar && !verifyWrongChar(key)){ 
       if(!verifyrightChar(key)){
         printWrongChar(key)
-        navigator.vibrate(200);
       switch(drawNumber){
         case 1:
         draw1();
@@ -199,7 +198,7 @@ function removeStorage(newWord){
   words.splice(index, 1)
 }
 
-var screenWidth =  screen.width; 
+var screenWidth =  700/* screen.width; */ 
 if(screenWidth <= 700){
   window.removeEventListener("keydown", verifyKey)
   var lettersSpace = document.querySelector(".hide")
