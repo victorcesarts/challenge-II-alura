@@ -6,6 +6,7 @@ var info = document.querySelector("#info-word")
 
 text.addEventListener("change", function(){ 
   var newWord = text.value
+  
   buttonSaveWord.addEventListener('click', function(){
     if(newWord.length <= 8){
       localStorage.setItem('newWord', newWord)
