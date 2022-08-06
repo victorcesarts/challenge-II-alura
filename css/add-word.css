@@ -1,9 +1,11 @@
 body{
   background-color: #F2F5F7;
 }
+
 header{
   padding: 20px;
 }
+
 h1 img{
   margin-top: 20px;
   margin-left: 20px;
@@ -129,6 +131,19 @@ textarea:focus{
 } 
 
 @media screen and (max-width:700px){
+  header{
+    padding: 5px;
+  }
+  
+  h1 img{
+    margin-top: 0;
+    margin-left: 2px;
+    padding: 2px;
+  }
+  
+  .content .text-area {
+    height: 30vh;
+}
   .container{
     display: flex;
     flex-direction: column;

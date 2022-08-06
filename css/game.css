@@ -13,9 +13,9 @@ h1 img{
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 60vh;
+  height: 50vh;
   text-align: center;
-  justify-content: center;
+  /* justify-content: center; */
 } 
 
 .content-game .graph{
@@ -78,10 +78,6 @@ canvas{
   width: auto;
 }
 
-.container{
-  display: inline-block;
-}
-
 .win-game{
   height: 50%;
   font-family: 'Inter';
@@ -117,8 +113,7 @@ canvas{
   font-size: 16px;
   text-align: center;
   line-height: 19px;
-  height: auto;
-  background-color: #0A3871; 
+  background-color: #0A3871;
 }
 
 .quit{
@@ -136,11 +131,19 @@ canvas{
   font-size: 16px;
   text-align: center;
   line-height: 19px;
-  height: auto;
   background-color: #FFFFFF; 
 } 
 
 @media screen and (max-width:700px){
+  header{
+    padding: 5px;
+  }
+  
+  h1 img{
+    margin-top: 0;
+    margin-left: 5px;
+    padding: 2px;
+  }
   .container{
     display: flex;
     flex-direction: column;
@@ -148,13 +151,17 @@ canvas{
   }
 
   .new-game{
-    margin-right: 0;
     margin-bottom:10px;
-    height: 10vh;
+    margin-right: 0;
+    height: 8vh;
+    font-size: 19px;
+    padding: 0;
   }
   .quit{
     margin-left: 0;
-    height: 10vh;
+    height: 8vh;
+    font-size: 19px;
+    padding: 0;
   }
   .word{
     font-size: 20px;

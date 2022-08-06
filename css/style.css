@@ -54,3 +54,18 @@ h1 img{
 	height: auto;
 	background-color: #FFFFFF; 
 } 
+
+@media screen and (max-width:700px){
+  header{
+    padding: 5px;
+  }
+  
+	h1 img{
+    margin-top: 0;
+    margin-left: 2px;
+    padding: 2px;
+  }
+	.first-page .container{
+		height: 70vh;
+	}  
+}
