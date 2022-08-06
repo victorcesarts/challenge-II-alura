@@ -13,12 +13,34 @@ h1 img{
 }
 
 .content .text-area{
-  width: 100%; 
-  height: 60vh;
+  width: 100%;
+  height: 50vh;
   display: flex;
-  justify-content:center;
+  justify-content:
+  center;
   margin: 0;
 } 
+
+textarea{
+  width: 80%;
+  background-color: transparent;
+  border: none;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 150%;
+  vertical-align: top;
+  resize: none;
+}
+
+textarea::placeholder{
+  color: #0A3871;
+}
+
+textarea:focus{
+  outline: none;
+}
 
 .content .info{
   display: flex;
@@ -66,27 +88,6 @@ h1 img{
   }
 }
 
-textarea{
-  width: 80%;
-  background-color: transparent;
-  border: none;
-  font-family: 'Inter';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 32px;
-  line-height: 150%;
-  vertical-align: top;
-  resize: none;
-}
-
-textarea::placeholder{
-  color: #0A3871;
-}
-
-textarea:focus{
-  outline: none;
-}
-
 .container{
   display: inline-block;
 }
@@ -95,7 +96,7 @@ textarea:focus{
   margin-right: 5px;
   padding: 24px;
   width: 269px;
-  height: 57px;
+  height: auto;
   box-sizing: border-box;
   border: none;
   border-radius: 24px;
@@ -106,15 +107,14 @@ textarea:focus{
   font-size: 16px;
   text-align: center;
   line-height: 19px;
-  height: auto;
-  background-color: #0A3871; 
+  background-color: #0A3871;
 }
 
 .cancel{
   margin-left: 5px;
   padding: 24px;
   width: 269px;
-  height: 57px;
+  height: auto;
   box-sizing: border-box;
   border: 1px solid #0A3871;
   border-radius: 24px;
@@ -125,6 +125,23 @@ textarea:focus{
   font-size: 16px;
   text-align: center;
   line-height: 19px;
-  height: auto;
   background-color: #FFFFFF; 
 } 
+
+@media screen and (max-width:700px){
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .save-word{
+    margin-right: 0;
+    margin-bottom:10px;
+    height: 10vh;
+  }
+  .cancel{
+    margin-left: 0;
+    height: 10vh;
+  }
+}

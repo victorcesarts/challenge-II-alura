@@ -75,6 +75,7 @@ function gameEngine(key){
       console.log(!verifyWrongChar(key))
       if(!verifyrightChar(key)){
         printWrongChar(key)
+        navigator.vibrate(200);
       switch(drawNumber){
         case 1:
         draw1();
@@ -173,7 +174,7 @@ function losing(){
   var loser = document.createElement('div')
   loser.textContent = "FIM DE JOGO!"
   loser.classList.add("lost-game")
-  content.append(loser)
+  content.append(loser) 
   window.removeEventListener("keydown", verifyKey)
   removeStorage(newWord)
 }
