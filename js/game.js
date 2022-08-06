@@ -2,7 +2,6 @@ var buttonNewGame = document.querySelector('.new-game')
 var buttonQuit = document.querySelector('.quit')
 var canvas = document.querySelector('canvas'); 
 var pincel = canvas.getContext('2d');
-pincel.fillStyle = '#0A3871';
 
 var words = ['CACHORRO', 'PASSAROS', 'COZINHAR', 'CARTEIRA', 'LAMPADA', 'CARTAZ', 'MOTO', 'RATOEIRA', 'MATRIZ', 'PALPEBRA']
 
@@ -160,16 +159,7 @@ function printWrongChar(letter){
     wrongLetter.textContent = letter
     wrongLetter.classList.add('wrong-letters')
     wrongLetterSpace.appendChild(wrongLetter)
-  }/* else{
-    var buttonsLetters = document.querySelectorAll('.letters-buttons')
-    for (var i = 0; i < buttonsLetters.length; i++){
-      if(buttonsLetters[i].textContent == letter){
-
-      }
-    }
-    
-  } */
-  
+  }  
 }
 
 function winning(){
@@ -198,7 +188,7 @@ function removeStorage(newWord){
   words.splice(index, 1)
 }
 
-var screenWidth =  700/* screen.width; */ 
+var screenWidth =  screen.width;
 if(screenWidth <= 700){
   window.removeEventListener("keydown", verifyKey)
   var lettersSpace = document.querySelector(".hide")
@@ -226,6 +216,7 @@ function printLetter(e){
 }
 
 /* Drawing on screen */
+pincel.fillStyle = '#0A3871';
 function draw1(){
   pincel.fillRect(80,110, 140, 2);
 }
