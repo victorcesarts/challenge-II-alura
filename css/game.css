@@ -85,7 +85,6 @@ canvas{
 .win-game{
   height: 50%;
   font-family: 'Inter';
-  font-style: bold;
   font-weight: 400;
   font-size: 50px;
   line-height: 150%;
@@ -96,7 +95,6 @@ canvas{
 .lost-game{
   height: 50%;
   font-family: 'Inter';
-  font-style: bold;
   font-weight: 400;
   font-size: 50px;
   line-height: 150%;
