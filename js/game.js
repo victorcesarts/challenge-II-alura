@@ -17,7 +17,7 @@ buttonNewGame.addEventListener('click', function(){
 
 buttonQuit.addEventListener('click', function(){
   removeStorage(newWord)
-  window.location.replace('first-page.html')
+  window.location.replace('index.html')
 })
 
 var numberWords = words.length

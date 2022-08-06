@@ -18,6 +18,6 @@ text.addEventListener("change", function(){
 })    
 
 buttonCancel.addEventListener('click', function(){
-  window.location.replace('first-page.html')
+  window.location.replace('index.html')
 })
 
