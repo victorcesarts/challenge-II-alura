@@ -72,7 +72,6 @@ function gameEngine(key){
     winning()
   }else{
     if(!foundChar && !verifyWrongChar(key)){ 
-      console.log(!verifyWrongChar(key))
       if(!verifyrightChar(key)){
         printWrongChar(key)
         navigator.vibrate(200);
@@ -119,14 +118,17 @@ function gameEngine(key){
 function verifyWrongChar(keyDown){
   var lettersInSpace = document.querySelectorAll(".wrong-letters")
   var thereIsWrongChar = false
+  var screenWidth = screen.width;
 
-  if(lettersInSpace == 0){
-    thereIsWrongChar = false
-  }else{
-    for (var i = 0; i < lettersInSpace.length; i++){
-      if(lettersInSpace[i].textContent == keyDown){
-        thereIsWrongChar = true
-        break
+  if(screenWidth > 700){ //If it's not a mobile
+    if(lettersInSpace.length == 0){
+      thereIsWrongChar = false
+    }else{
+      for (var i = 0; i < lettersInSpace.length; i++){
+        if(lettersInSpace[i].textContent == keyDown){
+          thereIsWrongChar = true
+          break
+        }
       }
     }
   }
@@ -137,26 +139,38 @@ function verifyrightChar(keyDown){
   var rightWords = document.querySelectorAll('.word')
   var foundedChar = false
 
-  if(rightWords.length == 0){
-    foundedChar = false
-  }else{
-    for (var i = 0; i < rightWords.length; i++) {
-      if (rightWords[i].textContent == keyDown) {
-        foundedChar = true
-        break
-      }
-    } 
-  }
+    if(rightWords.length == 0){
+      foundedChar = false //Letter do not belongs to word trying to be solved
+    }else{
+      for (var i = 0; i < rightWords.length; i++) {
+        if (rightWords[i].textContent == keyDown) {
+          foundedChar = true
+          break
+        }
+      } 
+    }
   return foundedChar
 }
 
 
 function printWrongChar(letter){
   var wrongLetterSpace = document.querySelector('.wrong-letters-space')
-  var wrongLetter = document.createElement('div')
-  wrongLetter.textContent = letter
-  wrongLetter.classList.add('wrong-letters')
-  wrongLetterSpace.appendChild(wrongLetter)
+  
+  if(wrongLetterSpace != null){
+    var wrongLetter = document.createElement('div')
+    wrongLetter.textContent = letter
+    wrongLetter.classList.add('wrong-letters')
+    wrongLetterSpace.appendChild(wrongLetter)
+  }/* else{
+    var buttonsLetters = document.querySelectorAll('.letters-buttons')
+    for (var i = 0; i < buttonsLetters.length; i++){
+      if(buttonsLetters[i].textContent == letter){
+
+      }
+    }
+    
+  } */
+  
 }
 
 function winning(){
@@ -183,6 +197,33 @@ function removeStorage(newWord){
   localStorage.removeItem('newWord')
   var index = words.indexOf(newWord)
   words.splice(index, 1)
+}
+
+var screenWidth =  screen.width; 
+if(screenWidth <= 700){
+  window.removeEventListener("keydown", verifyKey)
+  var lettersSpace = document.querySelector(".hide")
+  lettersSpace.classList.remove("hide")
+  lettersSpace.classList.add("alphabet")
+
+  var wrongLetterSpace = document.querySelector('.wrong-letters-space')
+  wrongLetterSpace.classList.remove("wrong-letters-space")
+  wrongLetterSpace.classList.add("hide")
+
+  var buttonsLetters = document.querySelectorAll('.letters-buttons')
+  for (var i = 0; i < buttonsLetters.length; i++){
+    buttonsLetters[i].addEventListener("click", printLetter)
+  }
+}
+
+function printLetter(e){
+  var letterPressedElement = e.target
+  var letterPressed = letterPressedElement.innerText
+
+  letterPressedElement.classList.remove("letters-buttons")
+  letterPressedElement.classList.add("letters-buttons-pressed")
+  letterPressedElement.removeEventListener("click", printLetter)
+  gameEngine(letterPressed)
 }
 
 /* Drawing on screen */
